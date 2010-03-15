@@ -1,0 +1,3 @@
+* describe Album, Artist, Event, Geo, Group, Library, Playlist, Radio, Tag
+* write tests
+* create gem
