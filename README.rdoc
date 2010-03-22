@@ -14,11 +14,11 @@ Rdirect user to auth_url.
 In your callback action:
 
   auth = Marjan::LastFm::Auth.new 'API KEY', 'API SECRET'
-  session_key = auth.get_session :token => params[:token]
+  session = auth.get_session :token => params[:token]
 
 Save your session key for later use. Use it:
 
-  auth = Marjan::LastFm::Auth.new 'API KEY', 'API SECRET', session_key
+  auth = Marjan::LastFm::Auth.new 'API KEY', 'API SECRET', session['key']
   user = Marjan::LastFm::User.new auth
   user.get_info
 
