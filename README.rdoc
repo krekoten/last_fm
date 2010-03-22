@@ -1,0 +1,27 @@
+=Las.fm
+
+API interface to http://last.fm/
+
+
+==Example
+
+Create auth object:
+
+  auth = Marjan::LastFm::Auth.new 'API KEY', 'API SECRET'
+  auth_url = auth.authorize_url
+
+Rdirect user to auth_url.
+In your callback action:
+
+  auth = Marjan::LastFm::Auth.new 'API KEY', 'API SECRET'
+  session_key = auth.get_session_key :token => params[:token]
+
+Save your session key for later use. Use it:
+
+  auth = Marjan::LastFm::Auth.new 'API KEY', 'API SECRET', session_key
+  user = Marjan::LastFm::User.new auth
+  user.get_info
+
+==Author
+
+Copyright (c) 2010 Marjan Krekoten <krekoten@gmail.com>, released under the MIT license
