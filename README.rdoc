@@ -22,6 +22,18 @@ Save your session key for later use. Use it:
   user = Marjan::LastFm::User.new auth
   user.get_info
 
+Scrobbling:
+
+  Marjan::LastFm::Scrobbler.client_id = 'your client ID'
+  Marjan::LastFm::Scrobbler.client_version = 'your client version'
+
+  s = Marjan::LastFm::Scrobbler.new auth, 'marik_te_ua'
+  s.handshake!
+  # tell the world what are you listening right now ;)
+  s.now_playing Marjan::LastFm::Scrobbler::Notification.new('Rammstein', 'Link 2,3,4')
+  # save just played track
+  s.submit Marjan::LastFm::Scrobbler::Submission.new('Rammstein', 'Mutter', (Time.now - 3.minutes).utc.to_i, 'P', '270')
+
 ==Author
 
 Copyright (c) 2010 Marjan Krekoten <krekoten@gmail.com>, released under the MIT license

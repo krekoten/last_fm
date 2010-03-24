@@ -6,6 +6,8 @@ module Marjan
   module LastFm
   
     class Base
+      
+      VERSION = '0.1'.freeze
     
       extend Forwardable
       include Util
@@ -15,7 +17,7 @@ module Marjan
     
       class << self
         attr_accessor :user_agent
-        @@user_agent = 'marjan_last_fm/' + LastFm::Version.string
+        @@user_agent = 'marjan_last_fm/' + VERSION
       end
     
       def initialize auth = nil

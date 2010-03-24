@@ -23,6 +23,7 @@ module Marjan
     autoload :Base, File.join(@base_dir, 'base')
     autoload :Util, File.join(@base_dir, 'util')
     autoload :Auth, File.join(@base_dir, 'auth')
+    autoload :Scrobbler, File.join(@base_dir, 'scrobbler')
     autoload :Tasteometer, File.join(@base_dir, 'tasteometer')
     autoload :Track, File.join(@base_dir, 'track')
     autoload :User, File.join(@base_dir, 'user')
