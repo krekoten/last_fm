@@ -21,9 +21,7 @@ module Marjan
       class BadSessionError < LastFm::InvalidSessionKeyError; end     # BADSESSION
       class HardFailureError < LastFm::ServiceAccessError; end        # FAILED <reason>
       
-      ProtcolVersion = '1.2.1'.freeze
-      
-      debug_output
+      PROTOCOL_VERSION = '1.2.1'.freeze
       
       class << self
         attr_accessor :client_id
@@ -37,7 +35,7 @@ module Marjan
       def handshake!
         params = {
           :hs       => 'true',
-          :p        => ProtcolVersion,
+          :p        => PROTOCOL_VERSION,
           :c        => @@client_id,
           :v        => @@client_version,
           :u        => @user_login,

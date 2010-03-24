@@ -9,6 +9,7 @@ module Marjan
     class InvalidFormatError < StandardError; end         # 5
     class InvalidParametersError < StandardError; end     # 6
     class InvalidResourceError < StandardError; end       # 7
+    class OperationFailedError < StandardError; end       # 8
     class InvalidSessionKeyError < StandardError; end     # 9
     class InvalidApiKeyError < StandardError; end         # 10
     class ServiceOfflineError < StandardError; end        # 11
@@ -24,6 +25,7 @@ module Marjan
     autoload :Util, File.join(@base_dir, 'util')
     autoload :Auth, File.join(@base_dir, 'auth')
     autoload :Scrobbler, File.join(@base_dir, 'scrobbler')
+    autoload :Radio, File.join(@base_dir, 'radio')
     autoload :Tasteometer, File.join(@base_dir, 'tasteometer')
     autoload :Track, File.join(@base_dir, 'track')
     autoload :User, File.join(@base_dir, 'user')

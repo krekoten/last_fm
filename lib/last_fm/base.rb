@@ -17,8 +17,13 @@ module Marjan
     
       class << self
         attr_accessor :user_agent
-        @@user_agent = 'marjan_last_fm/' + VERSION
+        attr_accessor :verbose
+        
+        @@user_agent ||= 'marjan_last_fm/' + VERSION
+        @@verbose ||= false
       end
+
+      debug_output if @@verbose
     
       def initialize auth = nil
         if auth
@@ -47,6 +52,7 @@ module Marjan
           when 5  then raise LastFm::InvalidFormatError, data['message']
           when 6  then raise LastFm::InvalidParametersError, data['message']
           when 7  then raise LastFm::InvalidResourceError, data['message']
+          when 8  then raise LastFm::OperationFailedError, data['message']
           when 9  then raise LastFm::InvalidSessionKeyError, data['message']
           when 10 then raise LastFm::InvalidApiKeyError, data['message']
           when 11 then raise LastFm::ServiceOfflineError, data['message']
