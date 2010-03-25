@@ -21,15 +21,22 @@ module Marjan
   
     @base_dir = File.join(File.dirname(__FILE__), 'last_fm')
   
-    autoload :Base, File.join(@base_dir, 'base')
-    autoload :Util, File.join(@base_dir, 'util')
-    autoload :Auth, File.join(@base_dir, 'auth')
-    autoload :Scrobbler, File.join(@base_dir, 'scrobbler')
-    autoload :Radio, File.join(@base_dir, 'radio')
-    autoload :Tasteometer, File.join(@base_dir, 'tasteometer')
-    autoload :Track, File.join(@base_dir, 'track')
-    autoload :User, File.join(@base_dir, 'user')
-    autoload :Version, File.join(@base_dir, 'version')
-    autoload :Venue, File.join(@base_dir, 'venue')
+    autoload :Util,         File.join(@base_dir, 'util')
+    
+    autoload :Auth,         File.join(@base_dir, 'auth')
+    autoload :Album,        File.join(@base_dir, 'album')
+    autoload :Base,         File.join(@base_dir, 'base')
+    autoload :Event,        File.join(@base_dir, 'event')
+    autoload :Geo,          File.join(@base_dir, 'geo')
+    autoload :Group,        File.join(@base_dir, 'group')
+    autoload :Library,      File.join(@base_dir, 'library')
+    autoload :Playlist,     File.join(@base_dir, 'playlist')
+    autoload :Radio,        File.join(@base_dir, 'radio')
+    autoload :Scrobbler,    File.join(@base_dir, 'scrobbler')
+    autoload :Tag,          File.join(@base_dir, 'tag')
+    autoload :Tasteometer,  File.join(@base_dir, 'tasteometer')
+    autoload :Track,        File.join(@base_dir, 'track')
+    autoload :User,         File.join(@base_dir, 'user')
+    autoload :Venue,        File.join(@base_dir, 'venue')
   end
 end
